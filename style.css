@@ -1,0 +1,92 @@
+/* 1. RESET Y GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    background-color: #f4f6f8;
+    line-height: 1.6;
+}
+
+/* 2. ESTRUCTURA */
+.header-principal {
+    background-color: #2980b9;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contenedor-principal {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    flex: 1;
+} /* <-- AQUÍ FALTABA ESTA LLAVE */
+
+h2 {
+    color: #004d99;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+#input-nombre {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto; /* Centrado */
+}
+
+input:valid { background-color: palegreen; }
+input:invalid { background-color: lightpink; }
+
+/* 3. DISEÑO RESPONSIVO */
+@media (max-width: 768px) {
+    .header-principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-principal ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .contenedor-principal {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    /* Corregido el selector: era un ID en el HTML */
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+}
